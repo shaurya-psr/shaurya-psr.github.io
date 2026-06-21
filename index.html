@@ -19,7 +19,7 @@ canvas { display:block; }
 #card .tags { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:10px; }
 #card .tag { font-size:9px; padding:2px 7px; background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.45); letter-spacing:0.5px; border:1px solid rgba(255,255,255,0.08); }
 #card p { font-size:11px; line-height:1.75; color:rgba(255,255,255,0.45); margin-bottom:14px; }
-#card a { display:inline-block; padding:5px 12px; font-size:10px; letter-spacing:1.5px; color:rgba(255,255,255,0.65); text-decoration:none; border:1px solid rgba(255,255,255,0.18); }
+#card a { display:inline-block; padding:5px 12px; font-size:10px; letter-spacing:1.5px; color:rgba(255,255,255,0.85); text-decoration:none; border:1px solid rgba(255,255,255,0.35); cursor:pointer; }
 #card a:hover { background:rgba(255,255,255,0.08); color:#fff; }
 #card .pdot { width:22px; height:22px; border-radius:50%; margin-bottom:10px; }
 #egg-card {
@@ -60,8 +60,8 @@ canvas { display:block; }
 #mm-canvas { display:block; border-radius:50%; }
 #start { position:fixed; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; background:#000; z-index:30; transition:opacity 0.8s; }
 #start h1 { font-size:22px; color:#888; font-weight:400; letter-spacing:10px; text-transform:uppercase; }
-#start p { color:rgba(255,255,255,0.22); font-size:10px; letter-spacing:2px; max-width:320px; text-align:center; line-height:2; }
-.sbtn { padding:9px 28px; background:transparent; border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.5); font-size:10px; letter-spacing:3px; cursor:pointer; font-family:'Courier New',monospace; text-transform:uppercase; }
+#start p { color:rgba(255,255,255,0.75); font-size:10px; letter-spacing:2px; max-width:320px; text-align:center; line-height:2; }
+.sbtn { padding:9px 28px; background:transparent; border:1px solid rgba(255,255,255,0.4); color:rgba(255,255,255,0.9); font-size:10px; letter-spacing:3px; cursor:pointer; font-family:'Courier New',monospace; text-transform:uppercase; }
 .sbtn:hover { border-color:rgba(255,255,255,0.5); color:#fff; }
 #read-mode::-webkit-scrollbar { width:4px; }
 #read-mode::-webkit-scrollbar-track { background:transparent; }
@@ -77,7 +77,7 @@ canvas { display:block; }
   <h2 id="card-title"></h2>
   <div class="tags" id="card-tags"></div>
   <p id="card-desc"></p>
-  <a id="card-link" href="#" target="_blank">[ VIEW PROJECT ]</a>
+  <a id="card-link" href="#" target="_blank">[ READ MORE ]</a>
 </div>
 <div id="egg-card">
   <button class="close-btn" onclick="closeEgg()">×</button>
@@ -93,13 +93,13 @@ canvas { display:block; }
 <div id="start">
   <div style="font-size:28px;letter-spacing:4px;color:#444;margin-bottom:8px">✦ ✦ ✦</div>
   <div style="color:rgba(255,255,255,0.25);font-size:9px;letter-spacing:4px;margin-bottom:6px;text-transform:uppercase">Engineering Portfolio</div>
-  <h1 style="font-size:18px;letter-spacing:4px;line-height:1.5;text-align:center;max-width:400px">Shaurya Singh</h1>
+  <h1 style="font-size:18px;letter-spacing:4px;line-height:1.5;text-align:center;max-width:400px;color:#ffffff">Shaurya Singh</h1>
   <p style="margin-top:4px">Launch from Earth — explore the system.<br>Each planet holds a project. Secrets await.</p>
   <div style="display:flex;gap:14px;margin-top:10px">
     <button class="sbtn" onclick="launch()">🚀 EXPLORE</button>
-    <button class="sbtn" style="border-color:rgba(255,255,255,0.25);color:rgba(255,255,255,0.55)" onclick="openReadMode()">📄 READ</button>
+    <button class="sbtn" style="border-color:rgba(255,255,255,0.4);color:rgba(255,255,255,0.8)" onclick="openReadMode()">📄 READ</button>
   </div>
-  <div style="color:rgba(255,255,255,0.12);font-size:9px;letter-spacing:2px;margin-top:8px">WASD / ARROWS TO FLY</div>
+  <div style="color:rgba(255,255,255,0.45);font-size:9px;letter-spacing:2px;margin-top:8px">WASD / ARROWS TO FLY</div>
 </div>
 
 <!-- Read mode overlay -->
@@ -108,178 +108,208 @@ canvas { display:block; }
 
     <!-- Header -->
     <div style="border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:28px;margin-bottom:40px;">
-      <div style="font-size:9px;letter-spacing:5px;color:rgba(255,255,255,0.2);margin-bottom:10px;text-transform:uppercase">Engineering Portfolio</div>
-      <h1 style="font-size:28px;font-weight:300;letter-spacing:2px;color:#eee;margin:0 0 4px">Shaurya Singh</h1>
-      <div style="font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:0.5px;margin-bottom:16px;font-style:italic">The engineer who fell in love with art</div>
-      <div style="font-size:10px;color:rgba(255,255,255,0.3);line-height:2.2;letter-spacing:0.3px">
+      <div style="font-size:9px;letter-spacing:5px;color:rgba(180,200,255,0.8);margin-bottom:10px;text-transform:uppercase">Engineering Portfolio</div>
+      <h1 style="font-size:28px;font-weight:300;letter-spacing:2px;color:#fff;margin:0 0 4px">Shaurya Singh</h1>
+      <div style="font-size:12px;color:rgba(200,215,255,0.8);letter-spacing:0.5px;margin-bottom:16px;font-style:italic">The engineer who fell in love with art</div>
+      <div style="font-size:10px;color:rgba(200,215,255,0.75);line-height:2.2;letter-spacing:0.3px">
         <span>University of Bath — MEng Mechanical &amp; Electrical Engineering</span><br>
         <span>shaurya.psr04@gmail.com &nbsp;·&nbsp; ss4277@bath.ac.uk &nbsp;·&nbsp; (+44) 7484 148607</span><br>
-        <a href="https://www.linkedin.com/in/shaurya-psr/" target="_blank" style="color:rgba(150,200,255,0.6);text-decoration:none">LinkedIn</a>
-        &nbsp;·&nbsp; <a href="#" target="_blank" style="color:rgba(150,200,255,0.6);text-decoration:none">Portfolio PDF</a>
+        <a href="https://www.linkedin.com/in/shaurya-psr/" target="_blank" style="color:rgba(120,190,255,0.9);text-decoration:none">LinkedIn</a>
+        &nbsp;·&nbsp; <a href="#" target="_blank" style="color:rgba(120,190,255,0.9);text-decoration:none">Portfolio PDF</a>
       </div>
     </div>
 
     <!-- About -->
     <section style="margin-bottom:44px">
-      <h2 style="font-size:11px;letter-spacing:4px;color:rgba(255,255,255,0.35);margin-bottom:18px;text-transform:uppercase;display:flex;align-items:center;gap:10px">
+      <h2 style="font-size:11px;letter-spacing:4px;color:rgba(255,255,255,0.75);margin-bottom:18px;text-transform:uppercase;display:flex;align-items:center;gap:10px">
         <span style="display:inline-block;width:20px;height:1px;background:rgba(255,255,255,0.15)"></span>Who Am I
       </h2>
-      <p style="font-size:12px;color:rgba(255,255,255,0.45);line-height:2;letter-spacing:0.3px;margin-bottom:14px">
+      <p style="font-size:12px;color:rgba(255,255,255,0.88);line-height:2;letter-spacing:0.3px;margin-bottom:14px">
         I'm an engineer who has learnt to transform ambitious ideas into real, test-driven hardware. My work has spanned rovers, rockets, drones, med-tech and particle accelerator engineering. I've taken projects from early requirements through to feasibility analysis, design, CAD, simulation/modelling, manufacture, and validation — with a focus on reliability, clear engineering thinking, and flair where possible.
       </p>
-      <p style="font-size:12px;color:rgba(255,255,255,0.4);line-height:2;letter-spacing:0.3px;margin-bottom:14px">
+      <p style="font-size:12px;color:rgba(255,255,255,0.82);line-height:2;letter-spacing:0.3px;margin-bottom:14px">
         For two years at university, my mother battled cancer — and alongside my degree I helped my family through that reality while still pushing forward academically and technically. That experience strengthened how I lead and how I work: with consistency, empathy, and a calm head under pressure.
       </p>
-      <p style="font-size:12px;color:rgba(255,255,255,0.4);line-height:2;letter-spacing:0.3px">
+      <p style="font-size:12px;color:rgba(255,255,255,0.82);line-height:2;letter-spacing:0.3px">
         At my core, I'm motivated by my responsibility to build things that change the world, to communicate ideas clearly, and to use engineering as a practical tool for societal good — whilst continuously growing as an engineer myself.
       </p>
     </section>
 
     <!-- Education -->
     <section style="margin-bottom:44px">
-      <h2 style="font-size:11px;letter-spacing:4px;color:rgba(255,255,255,0.35);margin-bottom:18px;text-transform:uppercase;display:flex;align-items:center;gap:10px">
+      <h2 style="font-size:11px;letter-spacing:4px;color:rgba(255,255,255,0.75);margin-bottom:18px;text-transform:uppercase;display:flex;align-items:center;gap:10px">
         <span style="display:inline-block;width:20px;height:1px;background:rgba(255,255,255,0.15)"></span>Education
       </h2>
       <div style="margin-bottom:16px">
-        <div style="font-size:12px;color:rgba(200,220,255,0.8);letter-spacing:0.5px;margin-bottom:4px">University of Bath &nbsp;<span style="color:rgba(255,255,255,0.25);font-size:10px">2022 – 2026</span></div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:6px">MEng Integrated Mechanical and Electrical Engineering — Predicted 2:1</div>
-        <div style="font-size:10px;color:rgba(255,255,255,0.28);line-height:2">First in Mathematics 1 (96%) &nbsp;·&nbsp; Mathematics 2 (88%) &nbsp;·&nbsp; Thermodynamics (73%) &nbsp;·&nbsp; Circuit Theory (76%)</div>
+        <div style="font-size:12px;color:rgba(220,235,255,1);letter-spacing:0.5px;margin-bottom:4px">University of Bath &nbsp;<span style="color:rgba(255,255,255,0.25);font-size:10px">2022 – 2026</span></div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.85);margin-bottom:6px">MEng Integrated Mechanical and Electrical Engineering — Predicted 2:1</div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.65);line-height:2">First in Mathematics 1 (96%) &nbsp;·&nbsp; Mathematics 2 (88%) &nbsp;·&nbsp; Thermodynamics (73%) &nbsp;·&nbsp; Circuit Theory (76%)</div>
       </div>
       <div>
-        <div style="font-size:12px;color:rgba(200,220,255,0.8);letter-spacing:0.5px;margin-bottom:4px">Aylesbury Grammar School &nbsp;<span style="color:rgba(255,255,255,0.25);font-size:10px">2015 – 2022</span></div>
-        <div style="font-size:10px;color:rgba(255,255,255,0.28);line-height:2">A-levels: Maths A* &nbsp;·&nbsp; Physics A &nbsp;·&nbsp; Further Maths A &nbsp;·&nbsp; Economics A</div>
+        <div style="font-size:12px;color:rgba(220,235,255,1);letter-spacing:0.5px;margin-bottom:4px">Aylesbury Grammar School &nbsp;<span style="color:rgba(255,255,255,0.25);font-size:10px">2015 – 2022</span></div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.65);line-height:2">A-levels: Maths A* &nbsp;·&nbsp; Physics A &nbsp;·&nbsp; Further Maths A &nbsp;·&nbsp; Economics A</div>
       </div>
     </section>
 
     <!-- Engineering Projects -->
     <section style="margin-bottom:44px">
-      <h2 style="font-size:11px;letter-spacing:4px;color:rgba(255,255,255,0.35);margin-bottom:18px;text-transform:uppercase;display:flex;align-items:center;gap:10px">
+      <h2 style="font-size:11px;letter-spacing:4px;color:rgba(255,255,255,0.75);margin-bottom:18px;text-transform:uppercase;display:flex;align-items:center;gap:10px">
         <span style="display:inline-block;width:20px;height:1px;background:rgba(255,255,255,0.15)"></span>Engineering Projects
       </h2>
 
-      <!-- CERN BWS -->
-      <div style="margin-bottom:28px;padding-left:14px;border-left:1px solid rgba(255,255,255,0.08)">
-        <div style="font-size:12px;color:rgba(200,220,255,0.85);letter-spacing:0.5px;margin-bottom:3px">CERN — Mechanical Manipulator for Beam Wire Scanners &nbsp;<span style="color:rgba(255,255,255,0.2);font-size:10px">Jun–Aug 2025</span></div>
-        <div style="font-size:10px;color:rgba(150,200,255,0.5);margin-bottom:8px;letter-spacing:1px">CERN INTERNSHIP · CATIA · ANSYS FEA · PROTOTYPE MANUFACTURE</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.38);line-height:1.9">Designed a purely mechanical 2m tall, 6 Degrees of Freedom manipulator for installing new-generation linear beam wire scanners into the Large Hadron Collider — which could not be installed due to space constraints. Created CAD in CATIA, validated stresses via hand calcs and ANSYS FEA, manufactured a fully functioning 1:1 prototype, and developed a Python script that digitised operation and performed automatic centre of mass calculations. Machine installed in LHC Q4 2025.</div>
+      <!-- CERN BWS Manipulator -->
+      <div id="proj-bws" style="margin-bottom:28px;padding-left:14px;border-left:1px solid rgba(255,255,255,0.08)">
+        <div style="font-size:12px;color:rgba(220,235,255,1);letter-spacing:0.5px;margin-bottom:3px">CERN — Mechanical Manipulator for Beam Wire Scanners &nbsp;<span style="color:rgba(180,200,255,0.6);font-size:10px">Jun–Aug 2025</span></div>
+        <div style="font-size:10px;color:rgba(120,190,255,0.85);margin-bottom:8px;letter-spacing:1px">CERN INTERNSHIP · CATIA · ANSYS FEA · PROTOTYPE MANUFACTURE</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.82);line-height:1.9">Designed a purely mechanical 2m tall, 6 Degrees of Freedom manipulator for installing new-generation linear beam wire scanners into the Large Hadron Collider — which could not be installed due to space constraints. Created CAD in CATIA, validated stresses via hand calcs and ANSYS FEA, manufactured a fully functioning 1:1 prototype, and developed a Python script that digitised operation and performed automatic centre of mass calculations. Machine installed in LHC Q4 2025.
+        <div style="display:flex;gap:10px;margin:12px 0 4px;flex-wrap:wrap">
+        <div style="flex:1;min-width:0;text-align:center"><img src="images/proj-bws_1.jpg" alt="Full BWS Manipulator CAD" style="width:100%;border-radius:3px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);min-height:80px;object-fit:cover;" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div style="display:none;width:100%;min-height:80px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:3px;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,0.2);letter-spacing:1px">[ ADD IMAGE ]</div><div style="font-size:9px;color:rgba(255,255,255,0.35);margin-top:4px;font-style:italic">Full BWS Manipulator CAD</div></div>
+        <div style="flex:1;min-width:0;text-align:center"><img src="images/proj-bws_2.jpg" alt="Working on prototype test-bench" style="width:100%;border-radius:3px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);min-height:80px;object-fit:cover;" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div style="display:none;width:100%;min-height:80px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:3px;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,0.2);letter-spacing:1px">[ ADD IMAGE ]</div><div style="font-size:9px;color:rgba(255,255,255,0.35);margin-top:4px;font-style:italic">Working on prototype test-bench</div></div>
+        <div style="flex:1;min-width:0;text-align:center"><img src="images/proj-bws_3.jpg" alt="Linear Beam Wire Scanner CAD" style="width:100%;border-radius:3px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);min-height:80px;object-fit:cover;" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div style="display:none;width:100%;min-height:80px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:3px;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,0.2);letter-spacing:1px">[ ADD IMAGE ]</div><div style="font-size:9px;color:rgba(255,255,255,0.35);margin-top:4px;font-style:italic">Linear Beam Wire Scanner CAD</div></div>
+        </div></div>
       </div>
 
       <!-- CERN ELISA -->
       <div style="margin-bottom:28px;padding-left:14px;border-left:1px solid rgba(255,255,255,0.08)">
-        <div style="font-size:12px;color:rgba(200,220,255,0.85);letter-spacing:0.5px;margin-bottom:3px">CERN — Modular Analysis Rig for ELISA &nbsp;<span style="color:rgba(255,255,255,0.2);font-size:10px">Nov 2025–Present</span></div>
-        <div style="font-size:10px;color:rgba(150,200,255,0.5);margin-bottom:8px;letter-spacing:1px">PARTICLE ACCELERATOR · ELECTRONIC ARCHITECTURE · SOFTWARE · MANUFACTURE</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.38);line-height:1.9">Designed a micrometre-resolution modular test-analysis rig for CERN's ELISA portable particle accelerator — enabling it to be used worldwide for research and demonstrations. Covered full engineering lifecycle: electronic architecture, mechanical design, software development, manufacture, and physical testing. Now installed into ELISA and deployed for the next 3 years.</div>
+        <div style="font-size:12px;color:rgba(220,235,255,1);letter-spacing:0.5px;margin-bottom:3px">CERN — Modular Analysis Rig for ELISA &nbsp;<span style="color:rgba(180,200,255,0.6);font-size:10px">Nov 2025–Present</span></div>
+        <div style="font-size:10px;color:rgba(120,190,255,0.85);margin-bottom:8px;letter-spacing:1px">PARTICLE ACCELERATOR · ELECTRONIC ARCHITECTURE · SOFTWARE · MANUFACTURE</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.82);line-height:1.9">Designed a micrometre-resolution modular test-analysis rig for CERN's ELISA portable particle accelerator — enabling it to be used worldwide for research and demonstrations. Covered full engineering lifecycle: electronic architecture, mechanical design, software development, manufacture, and physical testing. Now installed into ELISA and deployed for the next 3 years.</div>
       </div>
 
-      <!-- B2Space Rocket Fuel -->
-      <div style="margin-bottom:28px;padding-left:14px;border-left:1px solid rgba(255,255,255,0.08)">
-        <div style="font-size:12px;color:rgba(200,220,255,0.85);letter-spacing:0.5px;margin-bottom:3px">B2Space — World-First Sustainable Rocket Fuel &nbsp;<span style="color:rgba(255,255,255,0.2);font-size:10px">Oct 2024–Mar 2025</span></div>
-        <div style="font-size:10px;color:rgba(150,200,255,0.5);margin-bottom:8px;letter-spacing:1px">WORLD RECORD · CATIA · SPIN-CASTING · CFRP LAYUPS · HOT-FIRE TESTING</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.38);line-height:1.9">Led development of world-first sustainable rocket fuel with B2Space. Designed and manufactured a new spin-casting rig (CATIA), cast 8 fuel grains (PLA-armoured rapeseed &amp; beeswax blends), and ensured 8 successful biofuel burns at Snowdonia Aerospace hot-fire test using the hybrid-aerospike engine 'Hornet'. Rapeseed wax had never previously been fired as a rocket fuel — a genuine world first.</div>
+      <!-- B2Space World-First Rocket Fuel -->
+      <div id="proj-b2space" style="margin-bottom:28px;padding-left:14px;border-left:1px solid rgba(255,255,255,0.08)">
+        <div style="font-size:12px;color:rgba(220,235,255,1);letter-spacing:0.5px;margin-bottom:3px">B2Space — World-First Sustainable Rocket Fuel &nbsp;<span style="color:rgba(180,200,255,0.6);font-size:10px">Oct 2024–Mar 2025</span></div>
+        <div style="font-size:10px;color:rgba(120,190,255,0.85);margin-bottom:8px;letter-spacing:1px">WORLD RECORD · CATIA · SPIN-CASTING · CFRP LAYUPS · HOT-FIRE TESTING</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.82);line-height:1.9">Led development of world-first sustainable rocket fuel with B2Space. Designed and manufactured a new spin-casting rig (CATIA), cast 8 fuel grains (PLA-armoured rapeseed &amp; beeswax blends), and ensured 8 successful biofuel burns at Snowdonia Aerospace hot-fire test using the hybrid-aerospike engine 'Hornet'. Rapeseed wax had never previously been fired as a rocket fuel — a genuine world first.
+        <div style="display:flex;gap:10px;margin:12px 0 4px;flex-wrap:wrap">
+        <div style="flex:1;min-width:0;text-align:center"><img src="images/proj-b2space_1.jpg" alt="Beeswax hot-fire Mach diamonds" style="width:100%;border-radius:3px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);min-height:80px;object-fit:cover;" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div style="display:none;width:100%;min-height:80px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:3px;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,0.2);letter-spacing:1px">[ ADD IMAGE ]</div><div style="font-size:9px;color:rgba(255,255,255,0.35);margin-top:4px;font-style:italic">Beeswax hot-fire Mach diamonds</div></div>
+        <div style="flex:1;min-width:0;text-align:center"><img src="images/proj-b2space_2.jpg" alt="Hornet test stand in Wales" style="width:100%;border-radius:3px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);min-height:80px;object-fit:cover;" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div style="display:none;width:100%;min-height:80px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:3px;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,0.2);letter-spacing:1px">[ ADD IMAGE ]</div><div style="font-size:9px;color:rgba(255,255,255,0.35);margin-top:4px;font-style:italic">Hornet test stand in Wales</div></div>
+        <div style="flex:1;min-width:0;text-align:center"><img src="images/proj-b2space_3.jpg" alt="My spin-cast rig design" style="width:100%;border-radius:3px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);min-height:80px;object-fit:cover;" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div style="display:none;width:100%;min-height:80px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:3px;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,0.2);letter-spacing:1px">[ ADD IMAGE ]</div><div style="font-size:9px;color:rgba(255,255,255,0.35);margin-top:4px;font-style:italic">My spin-cast rig design</div></div>
+        </div></div>
       </div>
 
-      <!-- Marble Aero -->
-      <div style="margin-bottom:28px;padding-left:14px;border-left:1px solid rgba(255,255,255,0.08)">
-        <div style="font-size:12px;color:rgba(200,220,255,0.85);letter-spacing:0.5px;margin-bottom:3px">Marble Aero — Humanitarian UAVs &nbsp;<span style="color:rgba(255,255,255,0.2);font-size:10px">Ongoing</span></div>
-        <div style="font-size:10px;color:rgba(150,200,255,0.5);margin-bottom:8px;letter-spacing:1px">UAV · AUTONOMOUS HANGARS · ADDITIVE MANUFACTURING · AVIONICS · NDA</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.38);line-height:1.9">Cover-all engineer for a start-up designing UAVs for humanitarian missions — including anti-drug-trafficking in Costa Rica, ice-cap mapping in Greenland &amp; Canada, and maritime monitoring in Uruguay. Involved in mechanical design, manufacturing (MK14 drones via additive manufacturing), avionics, and flying. Complete design, electronics, manufacture, and deployment of autonomous drone hangars (NDA restricted).</div>
+      <!-- Marble Aero Humanitarian UAVs -->
+      <div id="proj-marble" style="margin-bottom:28px;padding-left:14px;border-left:1px solid rgba(255,255,255,0.08)">
+        <div style="font-size:12px;color:rgba(220,235,255,1);letter-spacing:0.5px;margin-bottom:3px">Marble Aero — Humanitarian UAVs &nbsp;<span style="color:rgba(180,200,255,0.6);font-size:10px">Ongoing</span></div>
+        <div style="font-size:10px;color:rgba(120,190,255,0.85);margin-bottom:8px;letter-spacing:1px">UAV · AUTONOMOUS HANGARS · ADDITIVE MANUFACTURING · AVIONICS · NDA</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.82);line-height:1.9">Cover-all engineer for a start-up designing UAVs for humanitarian missions — including anti-drug-trafficking in Costa Rica, ice-cap mapping in Greenland &amp; Canada, and maritime monitoring in Uruguay. Involved in mechanical design, manufacturing (MK14 drones via additive manufacturing), avionics, and flying. Complete design, electronics, manufacture, and deployment of autonomous drone hangars (NDA restricted).
+        <div style="display:flex;gap:10px;margin:12px 0 4px;flex-wrap:wrap">
+        <div style="flex:1;min-width:0;text-align:center"><img src="images/proj-marble_1.jpg" alt="MK12 being flown in Canada" style="width:100%;border-radius:3px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);min-height:80px;object-fit:cover;" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div style="display:none;width:100%;min-height:80px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:3px;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,0.2);letter-spacing:1px">[ ADD IMAGE ]</div><div style="font-size:9px;color:rgba(255,255,255,0.35);margin-top:4px;font-style:italic">MK12 being flown in Canada</div></div>
+        <div style="flex:1;min-width:0;text-align:center"><img src="images/proj-marble_2.jpg" alt="Final modifications on MK14" style="width:100%;border-radius:3px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);min-height:80px;object-fit:cover;" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div style="display:none;width:100%;min-height:80px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:3px;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,0.2);letter-spacing:1px">[ ADD IMAGE ]</div><div style="font-size:9px;color:rgba(255,255,255,0.35);margin-top:4px;font-style:italic">Final modifications on MK14</div></div>
+        <div style="flex:1;min-width:0;text-align:center"><img src="images/proj-marble_3.jpg" alt="MK13 testing in Greenland" style="width:100%;border-radius:3px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);min-height:80px;object-fit:cover;" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div style="display:none;width:100%;min-height:80px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:3px;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,0.2);letter-spacing:1px">[ ADD IMAGE ]</div><div style="font-size:9px;color:rgba(255,255,255,0.35);margin-top:4px;font-style:italic">MK13 testing in Greenland</div></div>
+        </div></div>
       </div>
 
-      <!-- Bath Rocket Team / Condor -->
-      <div style="margin-bottom:28px;padding-left:14px;border-left:1px solid rgba(255,255,255,0.08)">
-        <div style="font-size:12px;color:rgba(200,220,255,0.85);letter-spacing:0.5px;margin-bottom:3px">Bath Rocket Team — "Condor" at EuRoC 2024 &nbsp;<span style="color:rgba(255,255,255,0.2);font-size:10px">Sep 2023–Jul 2025</span></div>
-        <div style="font-size:10px;color:rgba(150,200,255,0.5);margin-bottom:8px;letter-spacing:1px">PROJECT LEAD · FEA · CFD · ANSYS FLUENT · AIRBRAKES · PAYLOAD</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.38);line-height:1.9">Project Lead for BRT — reverse-engineered rocket systems, conducted FEA &amp; CFD in ANSYS on airbrakes to minimise drag, prepared engine 'YellowJacket' for hot-fire test, designed and manufactured cloud-seeding payload, and developed the ground station. Competed at EuRoC 2024 in Portugal.</div>
+      <!-- Bath Rocket Team 'Condor' EuRoC -->
+      <div id="proj-condor" style="margin-bottom:28px;padding-left:14px;border-left:1px solid rgba(255,255,255,0.08)">
+        <div style="font-size:12px;color:rgba(220,235,255,1);letter-spacing:0.5px;margin-bottom:3px">Bath Rocket Team — "Condor" at EuRoC 2024 &nbsp;<span style="color:rgba(180,200,255,0.6);font-size:10px">Sep 2023–Jul 2025</span></div>
+        <div style="font-size:10px;color:rgba(120,190,255,0.85);margin-bottom:8px;letter-spacing:1px">PROJECT LEAD · FEA · CFD · ANSYS FLUENT · AIRBRAKES · PAYLOAD</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.82);line-height:1.9">Project Lead for BRT — reverse-engineered rocket systems, conducted FEA &amp; CFD in ANSYS on airbrakes to minimise drag, prepared engine 'YellowJacket' for hot-fire test, designed and manufactured cloud-seeding payload, and developed the ground station. Competed at EuRoC 2024 in Portugal.
+        <div style="display:flex;gap:10px;margin:12px 0 4px;flex-wrap:wrap">
+        <div style="flex:1;min-width:0;text-align:center"><img src="images/proj-condor_1.jpg" alt="Fully manufactured 'Condor'" style="width:100%;border-radius:3px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);min-height:80px;object-fit:cover;" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div style="display:none;width:100%;min-height:80px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:3px;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,0.2);letter-spacing:1px">[ ADD IMAGE ]</div><div style="font-size:9px;color:rgba(255,255,255,0.35);margin-top:4px;font-style:italic">Fully manufactured 'Condor'</div></div>
+        <div style="flex:1;min-width:0;text-align:center"><img src="images/proj-condor_2.jpg" alt="YellowJacket hot-fire" style="width:100%;border-radius:3px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);min-height:80px;object-fit:cover;" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div style="display:none;width:100%;min-height:80px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:3px;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,0.2);letter-spacing:1px">[ ADD IMAGE ]</div><div style="font-size:9px;color:rgba(255,255,255,0.35);margin-top:4px;font-style:italic">YellowJacket hot-fire</div></div>
+        <div style="flex:1;min-width:0;text-align:center"><img src="images/proj-condor_3.jpg" alt="Cloud seeding payload design" style="width:100%;border-radius:3px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);min-height:80px;object-fit:cover;" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div style="display:none;width:100%;min-height:80px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:3px;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,0.2);letter-spacing:1px">[ ADD IMAGE ]</div><div style="font-size:9px;color:rgba(255,255,255,0.35);margin-top:4px;font-style:italic">Cloud seeding payload design</div></div>
+        </div></div>
       </div>
 
-      <!-- Rovers -->
-      <div style="margin-bottom:28px;padding-left:14px;border-left:1px solid rgba(255,255,255,0.08)">
-        <div style="font-size:12px;color:rgba(200,220,255,0.85);letter-spacing:0.5px;margin-bottom:3px">Team Bath Roving — National Champions &nbsp;<span style="color:rgba(255,255,255,0.2);font-size:10px">Nov 2022–Jul 2024</span></div>
-        <div style="font-size:10px;color:rgba(150,200,255,0.5);margin-bottom:8px;letter-spacing:1px">PROJECT LEAD · NATIONAL WINNER · 6 ROVER DESIGNS · ROBOTIC ARM · ANSYS</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.38);line-height:1.9">Elected youngest-ever project lead. Designed and manufactured ~6 Mars/lunar rovers, including scissor-jack lifts and 5 DoF robotic arms. Won the 2024 AIRBUS National Olympus Rover Challenge on a £300 budget against teams with 10× more funding. Grew team from 4 to 36 members for international competitions.</div>
+      <!-- Team Bath Roving National Champions -->
+      <div id="proj-rovers" style="margin-bottom:28px;padding-left:14px;border-left:1px solid rgba(255,255,255,0.08)">
+        <div style="font-size:12px;color:rgba(220,235,255,1);letter-spacing:0.5px;margin-bottom:3px">Team Bath Roving — National Champions &nbsp;<span style="color:rgba(180,200,255,0.6);font-size:10px">Nov 2022–Jul 2024</span></div>
+        <div style="font-size:10px;color:rgba(120,190,255,0.85);margin-bottom:8px;letter-spacing:1px">PROJECT LEAD · NATIONAL WINNER · 6 ROVER DESIGNS · ROBOTIC ARM · ANSYS</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.82);line-height:1.9">Elected youngest-ever project lead. Designed and manufactured ~6 Mars/lunar rovers, including scissor-jack lifts and 5 DoF robotic arms. Won the 2024 AIRBUS National Olympus Rover Challenge on a £300 budget against teams with 10× more funding. Grew team from 4 to 36 members for international competitions.
+        <div style="display:flex;gap:10px;margin:12px 0 4px;flex-wrap:wrap">
+        <div style="flex:1;min-width:0;text-align:center"><img src="images/proj-rovers_1.jpg" alt="All rover designs + RAL Space" style="width:100%;border-radius:3px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);min-height:80px;object-fit:cover;" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div style="display:none;width:100%;min-height:80px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:3px;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,0.2);letter-spacing:1px">[ ADD IMAGE ]</div><div style="font-size:9px;color:rgba(255,255,255,0.35);margin-top:4px;font-style:italic">All rover designs + RAL Space</div></div>
+        <div style="flex:1;min-width:0;text-align:center"><img src="images/proj-rovers_2.jpg" alt="Camera arm mechanisms" style="width:100%;border-radius:3px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);min-height:80px;object-fit:cover;" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div style="display:none;width:100%;min-height:80px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:3px;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,0.2);letter-spacing:1px">[ ADD IMAGE ]</div><div style="font-size:9px;color:rgba(255,255,255,0.35);margin-top:4px;font-style:italic">Camera arm mechanisms</div></div>
+        <div style="flex:1;min-width:0;text-align:center"><img src="images/proj-rovers_3.jpg" alt="AIRBUS Mars Yard competition" style="width:100%;border-radius:3px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);min-height:80px;object-fit:cover;" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div style="display:none;width:100%;min-height:80px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:3px;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,0.2);letter-spacing:1px">[ ADD IMAGE ]</div><div style="font-size:9px;color:rgba(255,255,255,0.35);margin-top:4px;font-style:italic">AIRBUS Mars Yard competition</div></div>
+        </div></div>
       </div>
 
       <!-- Med-tech -->
       <div style="margin-bottom:28px;padding-left:14px;border-left:1px solid rgba(255,255,255,0.08)">
-        <div style="font-size:12px;color:rgba(200,220,255,0.85);letter-spacing:0.5px;margin-bottom:3px">ZMPT Health — Portable Workout Device &nbsp;<span style="color:rgba(255,255,255,0.2);font-size:10px">NDA Restricted</span></div>
-        <div style="font-size:10px;color:rgba(150,200,255,0.5);margin-bottom:8px;letter-spacing:1px">MED-TECH · MECHANICAL DESIGN · CONSULTANCY · ARAXIA</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.38);line-height:1.9">Contracted via my design engineering consultancy 'Araxia' to create a portable workout device for older/diabetic individuals — purely mechanical, enabling push/pull workouts up to 25 kg simulated weight within a 50×25×25 cm package. Closed public market trials conducted.</div>
+        <div style="font-size:12px;color:rgba(220,235,255,1);letter-spacing:0.5px;margin-bottom:3px">ZMPT Health — Portable Workout Device &nbsp;<span style="color:rgba(180,200,255,0.6);font-size:10px">NDA Restricted</span></div>
+        <div style="font-size:10px;color:rgba(120,190,255,0.85);margin-bottom:8px;letter-spacing:1px">MED-TECH · MECHANICAL DESIGN · CONSULTANCY · ARAXIA</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.82);line-height:1.9">Contracted via my design engineering consultancy 'Araxia' to create a portable workout device for older/diabetic individuals — purely mechanical, enabling push/pull workouts up to 25 kg simulated weight within a 50×25×25 cm package. Closed public market trials conducted.</div>
       </div>
 
-      <!-- MEng Thesis / CERN ELISA -->
-      <div style="margin-bottom:4px;padding-left:14px;border-left:2px solid rgba(80,180,255,0.25)">
+      <div id="proj-thesis" style="margin-bottom:4px;padding-left:14px;border-left:2px solid rgba(80,180,255,0.35)">
         <div style="font-size:12px;color:rgba(150,220,255,0.95);letter-spacing:0.5px;margin-bottom:3px">
-          MEng Thesis — CERN ELISA Modular Analysis Rig &nbsp;<span style="color:rgba(255,255,255,0.2);font-size:10px">Nov 2025–Present</span>
-          <span style="margin-left:8px;font-size:9px;padding:2px 7px;background:rgba(80,180,255,0.12);color:rgba(100,200,255,0.7);letter-spacing:1px;border:1px solid rgba(80,180,255,0.2)">MASTERS THESIS</span>
+          MEng Thesis — CERN ELISA Modular Analysis Rig &nbsp;<span style="color:rgba(180,200,255,0.6);font-size:10px">Nov 2025–Present</span>
+          <span style="margin-left:8px;font-size:9px;padding:2px 7px;background:rgba(80,180,255,0.12);color:rgba(140,210,255,0.95);letter-spacing:1px;border:1px solid rgba(100,190,255,0.4)">MASTERS THESIS</span>
         </div>
-        <div style="font-size:10px;color:rgba(100,180,255,0.6);margin-bottom:8px;letter-spacing:1px">CERN · PARTICLE PHYSICS · PIXE · ELECTRONIC ARCHITECTURE · MANUFACTURE</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.45);line-height:1.9">
+        <div style="font-size:10px;color:rgba(120,190,255,0.9);margin-bottom:8px;letter-spacing:1px">CERN · PARTICLE PHYSICS · PIXE · ELECTRONIC ARCHITECTURE · MANUFACTURE</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.88);line-height:1.9">
           My MEng thesis, conducted at CERN, involved designing a micrometre-resolution modular analysis rig for ELISA — CERN's Experimental Linear Accelerator for Surface Analysis — a portable particle accelerator. The rig was used to characterise BTV (Beam TV) screens using Proton-Induced X-ray Emission (PIXE) to quantify elemental impurities, providing critical data for the design of future high-energy particle accelerators and beam diagnostics systems.
           <br><br>
           The project spanned the full engineering lifecycle independently: electronic architecture and control system design, mechanical design and CAD, software development for automated data acquisition, manufacture, calibration, and a detailed test campaign. The rig is now permanently installed into ELISA and will be used across testing, research, and demonstrations for the next 3 years — a genuinely lasting contribution to CERN's instrumentation infrastructure.
+        </div>
+      
+        <div style="display:flex;gap:10px;margin:12px 0 4px;flex-wrap:wrap">
+<div style="flex:1;min-width:0;text-align:center"><img src="images/proj-thesis_1.jpg" alt="Labelled drawing of final rig" style="width:100%;border-radius:3px;border:1px solid rgba(100,180,255,0.15);background:rgba(80,140,255,0.04);min-height:80px;object-fit:cover;" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div style="display:none;width:100%;min-height:80px;background:rgba(80,140,255,0.04);border:1px solid rgba(100,180,255,0.1);border-radius:3px;align-items:center;justify-content:center;font-size:9px;color:rgba(100,180,255,0.3);letter-spacing:1px">[ ADD IMAGE ]</div><div style="font-size:9px;color:rgba(120,190,255,0.5);margin-top:4px;font-style:italic">Labelled drawing of final rig</div></div>
+        <div style="flex:1;min-width:0;text-align:center"><img src="images/proj-thesis_2.jpg" alt="Performing ELISA calibration" style="width:100%;border-radius:3px;border:1px solid rgba(100,180,255,0.15);background:rgba(80,140,255,0.04);min-height:80px;object-fit:cover;" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div style="display:none;width:100%;min-height:80px;background:rgba(80,140,255,0.04);border:1px solid rgba(100,180,255,0.1);border-radius:3px;align-items:center;justify-content:center;font-size:9px;color:rgba(100,180,255,0.3);letter-spacing:1px">[ ADD IMAGE ]</div><div style="font-size:9px;color:rgba(120,190,255,0.5);margin-top:4px;font-style:italic">Performing ELISA calibration</div></div>
+        <div style="flex:1;min-width:0;text-align:center"><img src="images/proj-thesis_3.jpg" alt="Initial testing after installation" style="width:100%;border-radius:3px;border:1px solid rgba(100,180,255,0.15);background:rgba(80,140,255,0.04);min-height:80px;object-fit:cover;" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div style="display:none;width:100%;min-height:80px;background:rgba(80,140,255,0.04);border:1px solid rgba(100,180,255,0.1);border-radius:3px;align-items:center;justify-content:center;font-size:9px;color:rgba(100,180,255,0.3);letter-spacing:1px">[ ADD IMAGE ]</div><div style="font-size:9px;color:rgba(120,190,255,0.5);margin-top:4px;font-style:italic">Initial testing after installation</div></div>
         </div>
       </div>
     </section>
 
     <!-- Awards -->
     <section style="margin-bottom:44px">
-      <h2 style="font-size:11px;letter-spacing:4px;color:rgba(255,255,255,0.35);margin-bottom:18px;text-transform:uppercase;display:flex;align-items:center;gap:10px">
+      <h2 style="font-size:11px;letter-spacing:4px;color:rgba(255,255,255,0.75);margin-bottom:18px;text-transform:uppercase;display:flex;align-items:center;gap:10px">
         <span style="display:inline-block;width:20px;height:1px;background:rgba(255,255,255,0.15)"></span>Awards &amp; Scholarships
       </h2>
-      <ul style="list-style:none;padding:0;margin:0;font-size:11px;color:rgba(255,255,255,0.38);line-height:2.4;letter-spacing:0.3px">
-        <li><span style="color:rgba(150,200,255,0.6)">·</span> <span style="color:rgba(220,220,255,0.7)">IET Future Talent Scholarship</span> — Awarded for demonstrating engineering excellence in the face of great adversity <span style="color:rgba(255,255,255,0.2)">(Dec 2025)</span></li>
-        <li><span style="color:rgba(150,200,255,0.6)">·</span> <span style="color:rgba(220,220,255,0.7)">Royal Academy of Engineering — Engineering Leaders Scholarship</span> — 1 of 38 recipients from thousands of applicants. Using funding to design a solid motor rocket targeting the N-class altitude world record <span style="color:rgba(255,255,255,0.2)">(Mar 2024)</span></li>
-        <li><span style="color:rgba(150,200,255,0.6)">·</span> <span style="color:rgba(220,220,255,0.7)">BAE Systems Arkwright Scholar</span> — Selected after yearlong process; grant invested into building a personal 3D printer <span style="color:rgba(255,255,255,0.2)">(Oct 2020)</span></li>
-        <li><span style="color:rgba(150,200,255,0.6)">·</span> <span style="color:rgba(220,220,255,0.7)">AIRBUS National Olympus Rover Challenge 2024</span> — Winners, £300 budget vs teams with 10× more funding</li>
-        <li><span style="color:rgba(150,200,255,0.6)">·</span> <span style="color:rgba(220,220,255,0.7)">TEDxBathUniversity</span> — Headlined with speech "The Fragility of Ambition" (selected from 3 rounds of auditions)</li>
+      <ul style="list-style:none;padding:0;margin:0;font-size:11px;color:rgba(255,255,255,0.82);line-height:2.4;letter-spacing:0.3px">
+        <li><span style="color:rgba(120,190,255,0.9)">·</span> <span style="color:rgba(220,235,255,1)">IET Future Talent Scholarship</span> — Awarded for demonstrating engineering excellence in the face of great adversity <span style="color:rgba(255,255,255,0.2)">(Dec 2025)</span></li>
+        <li><span style="color:rgba(120,190,255,0.9)">·</span> <span style="color:rgba(220,235,255,1)">Royal Academy of Engineering — Engineering Leaders Scholarship</span> — 1 of 38 recipients from thousands of applicants. Using funding to design a solid motor rocket targeting the N-class altitude world record <span style="color:rgba(255,255,255,0.2)">(Mar 2024)</span></li>
+        <li><span style="color:rgba(120,190,255,0.9)">·</span> <span style="color:rgba(220,235,255,1)">BAE Systems Arkwright Scholar</span> — Selected after yearlong process; grant invested into building a personal 3D printer <span style="color:rgba(255,255,255,0.2)">(Oct 2020)</span></li>
+        <li><span style="color:rgba(120,190,255,0.9)">·</span> <span style="color:rgba(220,235,255,1)">AIRBUS National Olympus Rover Challenge 2024</span> — Winners, £300 budget vs teams with 10× more funding</li>
+        <li><span style="color:rgba(120,190,255,0.9)">·</span> <span style="color:rgba(220,235,255,1)">TEDxBathUniversity</span> — Headlined with speech "The Fragility of Ambition" (selected from 3 rounds of auditions)</li>
       </ul>
     </section>
 
     <!-- Experience -->
     <section style="margin-bottom:44px">
-      <h2 style="font-size:11px;letter-spacing:4px;color:rgba(255,255,255,0.35);margin-bottom:18px;text-transform:uppercase;display:flex;align-items:center;gap:10px">
+      <h2 style="font-size:11px;letter-spacing:4px;color:rgba(255,255,255,0.75);margin-bottom:18px;text-transform:uppercase;display:flex;align-items:center;gap:10px">
         <span style="display:inline-block;width:20px;height:1px;background:rgba(255,255,255,0.15)"></span>Additional Experience
       </h2>
-      <ul style="list-style:none;padding:0;margin:0;font-size:11px;color:rgba(255,255,255,0.38);line-height:2.4;letter-spacing:0.3px">
-        <li><span style="color:rgba(150,200,255,0.6)">·</span> <span style="color:rgba(220,220,255,0.7)">Team Bath Racing Electric (Formula Student)</span> — Mechanical Analysis &amp; Design Engineer; CFD &amp; FEA across the car <span style="color:rgba(255,255,255,0.2)">(Sep 2025–Present)</span></li>
-        <li><span style="color:rgba(150,200,255,0.6)">·</span> <span style="color:rgba(220,220,255,0.7)">Royal Academy of Engineering &amp; IET</span> — STEM outreach and widening participation work</li>
-        <li><span style="color:rgba(150,200,255,0.6)">·</span> <span style="color:rgba(220,220,255,0.7)">Grade 8 Speech &amp; Drama (LAMBDA)</span> — Honed communication and leadership skills</li>
-        <li><span style="color:rgba(150,200,255,0.6)">·</span> <span style="color:rgba(220,220,255,0.7)">Volunteering</span> — Homelessness campaigns in Milton Keynes; fundraising for Malosa Secondary School, Malawi</li>
-        <li><span style="color:rgba(150,200,255,0.6)">·</span> <span style="color:rgba(220,220,255,0.7)">35 countries backpacked</span> — buses, trams, and hostels; learning adaptability and cultural awareness</li>
+      <ul style="list-style:none;padding:0;margin:0;font-size:11px;color:rgba(255,255,255,0.82);line-height:2.4;letter-spacing:0.3px">
+        <li><span style="color:rgba(120,190,255,0.9)">·</span> <span style="color:rgba(220,235,255,1)">Team Bath Racing Electric (Formula Student)</span> — Mechanical Analysis &amp; Design Engineer; CFD &amp; FEA across the car <span style="color:rgba(255,255,255,0.2)">(Sep 2025–Present)</span></li>
+        <li><span style="color:rgba(120,190,255,0.9)">·</span> <span style="color:rgba(220,235,255,1)">Royal Academy of Engineering &amp; IET</span> — STEM outreach and widening participation work</li>
+        <li><span style="color:rgba(120,190,255,0.9)">·</span> <span style="color:rgba(220,235,255,1)">Grade 8 Speech &amp; Drama (LAMBDA)</span> — Honed communication and leadership skills</li>
+        <li><span style="color:rgba(120,190,255,0.9)">·</span> <span style="color:rgba(220,235,255,1)">Volunteering</span> — Homelessness campaigns in Milton Keynes; fundraising for Malosa Secondary School, Malawi</li>
+        <li><span style="color:rgba(120,190,255,0.9)">·</span> <span style="color:rgba(220,235,255,1)">35 countries backpacked</span> — buses, trams, and hostels; learning adaptability and cultural awareness</li>
       </ul>
     </section>
 
     <!-- Skills -->
     <section style="margin-bottom:44px">
-      <h2 style="font-size:11px;letter-spacing:4px;color:rgba(255,255,255,0.35);margin-bottom:18px;text-transform:uppercase;display:flex;align-items:center;gap:10px">
+      <h2 style="font-size:11px;letter-spacing:4px;color:rgba(255,255,255,0.75);margin-bottom:18px;text-transform:uppercase;display:flex;align-items:center;gap:10px">
         <span style="display:inline-block;width:20px;height:1px;background:rgba(255,255,255,0.15)"></span>Skills
       </h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
         <div>
-          <div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.2);margin-bottom:8px">DESIGN &amp; SIMULATION</div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.38);line-height:2">CATIA &nbsp;· Autodesk Inventor &nbsp;· SolidWorks &nbsp;· Fusion 360<br>ANSYS FEA (structural, thermal) &nbsp;· ANSYS Fluent CFD<br>Technical hand drawings</div>
+          <div style="font-size:9px;letter-spacing:2px;color:rgba(150,190,255,0.8);margin-bottom:8px">DESIGN &amp; SIMULATION</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.82);line-height:2">CATIA &nbsp;· Autodesk Inventor &nbsp;· SolidWorks &nbsp;· Fusion 360<br>ANSYS FEA (structural, thermal) &nbsp;· ANSYS Fluent CFD<br>Technical hand drawings</div>
         </div>
         <div>
-          <div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.2);margin-bottom:8px">MANUFACTURE &amp; FABRICATION</div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.38);line-height:2">Metal fabrication &nbsp;· Lathes &amp; CNC<br>Additive manufacturing &nbsp;· CFRP/GFRP layups<br>Spin-casting &nbsp;· Welding &amp; woodwork</div>
+          <div style="font-size:9px;letter-spacing:2px;color:rgba(150,190,255,0.8);margin-bottom:8px">MANUFACTURE &amp; FABRICATION</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.82);line-height:2">Metal fabrication &nbsp;· Lathes &amp; CNC<br>Additive manufacturing &nbsp;· CFRP/GFRP layups<br>Spin-casting &nbsp;· Welding &amp; woodwork</div>
         </div>
         <div>
-          <div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.2);margin-bottom:8px">SOFTWARE</div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.38);line-height:2">MATLAB &amp; Simulink &nbsp;· Python &nbsp;· C++<br>Arduino programming</div>
+          <div style="font-size:9px;letter-spacing:2px;color:rgba(150,190,255,0.8);margin-bottom:8px">SOFTWARE</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.82);line-height:2">MATLAB &amp; Simulink &nbsp;· Python &nbsp;· C++<br>Arduino programming</div>
         </div>
         <div>
-          <div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.2);margin-bottom:8px">LEADERSHIP</div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.38);line-height:2">Project Lead (rovers, rockets, drones)<br>Team scaling (4 → 36 members)<br>Engineering consultancy (Araxia)</div>
+          <div style="font-size:9px;letter-spacing:2px;color:rgba(150,190,255,0.8);margin-bottom:8px">LEADERSHIP</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.82);line-height:2">Project Lead (rovers, rockets, drones)<br>Team scaling (4 → 36 members)<br>Engineering consultancy (Araxia)</div>
         </div>
       </div>
     </section>
 
     <!-- Contact -->
     <section style="margin-bottom:40px">
-      <h2 style="font-size:11px;letter-spacing:4px;color:rgba(255,255,255,0.35);margin-bottom:18px;text-transform:uppercase;display:flex;align-items:center;gap:10px">
+      <h2 style="font-size:11px;letter-spacing:4px;color:rgba(255,255,255,0.75);margin-bottom:18px;text-transform:uppercase;display:flex;align-items:center;gap:10px">
         <span style="display:inline-block;width:20px;height:1px;background:rgba(255,255,255,0.15)"></span>Contact
       </h2>
-      <div style="font-size:11px;color:rgba(255,255,255,0.38);line-height:2.4">
+      <div style="font-size:11px;color:rgba(255,255,255,0.82);line-height:2.4">
         <div>shaurya.psr04@gmail.com &nbsp;·&nbsp; ss4277@bath.ac.uk</div>
         <div>(+44) 7484 148607</div>
         <div>21 Osier Lane, Shenley Lodge, Milton Keynes, MK5 7EP</div>
@@ -682,10 +712,18 @@ function drawEarth(sx,sy,mirror){
 }
 
 /* ══ LAUNCH ══ */
-function openReadMode(){
+function openReadMode(anchor){
   document.getElementById('read-mode').style.display='block';
   document.getElementById('start').style.pointerEvents='none';
   document.getElementById('start').style.opacity='0';
+  if(anchor){
+    setTimeout(()=>{
+      const el=document.getElementById(anchor);
+      if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+    },80);
+  } else {
+    document.getElementById('read-mode').scrollTop=0;
+  }
 }
 function closeReadMode(){
   document.getElementById('read-mode').style.display='none';
@@ -796,7 +834,19 @@ function openCard(p){
   document.getElementById('card-title').textContent=p.name;
   document.getElementById('card-tags').innerHTML=p.tags.map(t=>`<span class="tag">${t}</span>`).join('');
   document.getElementById('card-desc').textContent=p.desc;
-  document.getElementById('card-link').href=p.link;
+  // Map project name to read mode anchor id
+  const anchorMap={
+    'CERN — Beam Wire Scanner Manipulator':'proj-bws',
+    'B2Space — World-First Rocket Fuel':'proj-b2space',
+    'Marble Aero — Humanitarian UAVs':'proj-marble',
+    'Team Bath Roving — National Champions':'proj-rovers',
+    "Bath Rocket Team — 'Condor' EuRoC":'proj-condor',
+    'MEng Thesis — CERN ELISA Accelerator':'proj-thesis',
+  };
+  const anchor=anchorMap[p.name]||'';
+  const link=document.getElementById('card-link');
+  link.removeAttribute('href');
+  link.onclick=(e)=>{e.preventDefault();openReadMode(anchor);};
   document.getElementById('card').classList.add('visible');
 }
 function closeCard(){document.getElementById('card').classList.remove('visible');}
